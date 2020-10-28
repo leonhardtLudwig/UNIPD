@@ -11,8 +11,8 @@ public class Piastrelle{
         if(totalWidth-tileWidth<0){
             System.out.println("Not enough space");
         }else{
-            totalTiles = (totalWidth-tileWidth)/tileWidth;
-            gap = (totalWidth - totalTiles*tileWidth);
+            totalTiles = 1+ (totalWidth-tileWidth)/tileWidth;
+            gap = (totalWidth - totalTiles*tileWidth)/2;
             System.out.println("There are "+ totalTiles + " tiles");
             System.out.println("Gap: "+ gap);
         }
