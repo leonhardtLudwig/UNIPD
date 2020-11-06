@@ -6,8 +6,6 @@ public class Esercizio7 {
         String b = t.nextLine();
         String c = t.nextLine();
 
-        System.out.println();
-
         if(a.compareTo(b)>0&&a.compareTo(c)>0){//la stringa a è la più piccola?
             if(b.compareTo(c)<0){//la stringa b è più grande di c?
                 System.out.println(b+"\n"+c+"\n"+a);
