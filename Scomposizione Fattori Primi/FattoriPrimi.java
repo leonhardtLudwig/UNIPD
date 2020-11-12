@@ -13,12 +13,14 @@ public class FattoriPrimi {
         }else{
             int prodotto = 1;
             int primo = 2;
+            int num = n;
             while(prodotto!=n){
-                if(n%primo==0){
-                    System.out.print(primo+"*");
+                if(num%primo==0){
                     prodotto = prodotto*primo;
+                    num = num/primo;
+                    System.out.print(primo+(prodotto!=n?"*":""));   
                 }else{
-                    primo = findPrimo(primo+2);
+                    primo = findPrimo(primo+1);
                 }
             }
             System.out.println();
@@ -34,11 +36,11 @@ public class FattoriPrimi {
     }
 
     public static boolean isPrimo(int n) {
-        boolean primo = n==2||n==3;
-        for (int j = 2; !primo && j * j <= n; j++) {
-            primo = n % j != 0;
+        int divisore = 1;
+        for(int j = 2; divisore == 1 && j*j<=n;j++){
+            divisore = n%j==0?j:1;     
         }
-        return primo;
+        return !(divisore!=1 && divisore!=n);
     }
 
 }
